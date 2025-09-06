@@ -34,6 +34,8 @@
             inherit lib pkgs;
           }
         );
+
+        checks = self.packages.${system};
       }
     );
 }

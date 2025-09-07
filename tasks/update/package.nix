@@ -18,7 +18,8 @@ let
     nix-update
   ];
 
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   pname = "update";
   version = "0.0.0";
   src = ./.;

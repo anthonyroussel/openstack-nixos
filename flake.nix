@@ -3,6 +3,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat.url = "github:edolstra/flake-compat";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   description = "OpenStack on NixOS";
@@ -12,6 +13,7 @@
       self,
       nixpkgs,
       flake-utils,
+      treefmt-nix,
       ...
     }:
     let
@@ -25,9 +27,11 @@
           inherit (nixpkgs) lib;
           overlays = [ self.overlays.${system} ];
         };
+
+        treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
       in
       {
-        formatter = pkgs.nixfmt-tree;
+        formatter = treefmtEval.config.build.wrapper;
 
         overlays = _: _: (import ./pkgs { inherit lib pkgs; });
 
@@ -37,7 +41,9 @@
           }
         );
 
-        checks = self.packages.${system};
+        checks = self.packages.${system} // {
+          formatting = treefmtEval.config.build.check self;
+        };
       }
     );
 }

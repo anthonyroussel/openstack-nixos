@@ -23,9 +23,14 @@ jobs:
           SYSTEM: x86_64-linux
         run: nix run .#tasks.${SYSTEM}.update
 
-      - uses: DeterminateSystems/update-flake-lock@c5930b397a673a70ca70be06020e943aeac310a1 # v27
+      - name: Create PR
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
         with:
-          pr-title: "chore(deps): update packages"
-          pr-labels: |
-            dependencies
+          branch: update-packages
+          delete-branch: true
+          title: Update packages
+          assignees: anthonyroussel
+          labels: |
+            packages
             automated
+          reviewers: anthonyroussel

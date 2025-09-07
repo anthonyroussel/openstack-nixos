@@ -41,6 +41,12 @@
           }
         );
 
+        tasks = flake-utils.lib.filterPackages system (
+          import ./tasks {
+            inherit lib pkgs;
+          }
+        );
+
         checks = self.packages.${system} // {
           formatting = treefmtEval.config.build.check self;
         };

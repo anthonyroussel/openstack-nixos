@@ -27,6 +27,8 @@
         };
       in
       {
+        formatter = pkgs.nixfmt-tree;
+
         overlays = _: _: (import ./pkgs { inherit lib pkgs; });
 
         packages = flake-utils.lib.filterPackages system (

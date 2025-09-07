@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
   projectRootFile = "flake.nix";
-  programs.nixfmt.enable = true;
+
+  programs = {
+    mdformat.enable = true;
+    nixfmt.enable = true;
+    shellcheck.enable = true;
+  };
 }

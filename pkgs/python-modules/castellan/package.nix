@@ -27,13 +27,13 @@
 
 buildPythonPackage rec {
   pname = "castellan";
-  version = "5.4.1";
+  version = "5.5.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "castellan";
     inherit version;
-    hash = "sha256-sVJpn6epVtIMF65PHHRAjNynPxP104k/jEYGE78nmXQ=";
+    hash = "sha256-TpbGh9w9svCKhJRmLLyyJwqoeozdPmGR7K8ZeStRSJ8=";
   };
 
   build-system = [

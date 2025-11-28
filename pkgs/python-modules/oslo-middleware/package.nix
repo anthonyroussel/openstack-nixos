@@ -27,13 +27,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-middleware";
-  version = "6.6.0";
+  version = "7.0.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_middleware";
     inherit version;
-    hash = "sha256-bMucgPGJ/rxcxQ4RPA6JTJksNpff1v5yL/hPzNtbpSY=";
+    hash = "sha256-O5T8zTKjDiM/FQFYuA4MynFTZtecALBiPDlLQUpcizA=";
   };
 
   build-system = [

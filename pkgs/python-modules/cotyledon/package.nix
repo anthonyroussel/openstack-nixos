@@ -25,14 +25,14 @@
 
 buildPythonPackage rec {
   pname = "cotyledon";
-  version = "2.1.0";
+  version = "2.2.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "sileht";
     repo = "cotyledon";
     tag = version;
-    hash = "sha256-1E5ugF9faCSUOynsEVM0G2ir+7Mi5elX4+oQzfREueE=";
+    hash = "sha256-PILhNATf+FbWUaFMUZvUwe27QEczYY8sbwasvP5s05M=";
   };
 
   build-system = [

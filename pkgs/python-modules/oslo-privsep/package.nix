@@ -24,13 +24,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-privsep";
-  version = "3.8.0";
+  version = "3.9.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_privsep";
     inherit version;
-    hash = "sha256-c8TgZWvdsj9iD5FqIbZBPKADRIMUSllovKzt06NER/Y=";
+    hash = "sha256-G2DgtXz1tINqiO/lVaKa3txDAPp/KpRlN7YTVfXc6X0=";
   };
 
   build-system = [

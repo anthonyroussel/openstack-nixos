@@ -27,13 +27,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-vmware";
-  version = "4.7.0";
+  version = "4.8.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_vmware";
     inherit version;
-    hash = "sha256-ZKIttXRliLSzFYLX4D4cYmmq1CrF1Ifwd0ACiz+qn+U=";
+    hash = "sha256-PbnJaRisbDd1taZWutCgMRgQ3Myc5yCyIB7hLceaw2g=";
   };
 
   build-system = [

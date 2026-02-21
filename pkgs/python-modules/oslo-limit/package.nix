@@ -21,13 +21,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-limit";
-  version = "2.9.2";
+  version = "2.10.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_limit";
     inherit version;
-    hash = "sha256-8TDEpZItdVbJAPhPzbTIBYRM6S45UhFpIZjTWQGSifg=";
+    hash = "sha256-mWitOFkswNWR/sZ+ms3+o5pvuHW/9K0HzOVQL4onhEc=";
   };
 
   build-system = [

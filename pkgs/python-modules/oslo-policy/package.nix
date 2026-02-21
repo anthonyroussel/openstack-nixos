@@ -24,13 +24,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-policy";
-  version = "4.8.0";
+  version = "5.0.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_policy";
     inherit version;
-    hash = "sha256-bjeIybdo/+d2MsyrrBh8M3rVlIz5N47DinUHzvicODY=";
+    hash = "sha256-s+hdRe6gpgyyNiQQxtA5Bt7CGg+B32msFoZ4UfB15dE=";
   };
 
   build-system = [

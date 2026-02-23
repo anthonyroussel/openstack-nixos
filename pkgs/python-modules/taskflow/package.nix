@@ -31,18 +31,17 @@
   sqlalchemy,
   stestr,
   testscenarios,
-  yahoo-zake,
 }:
 
 buildPythonPackage rec {
   pname = "taskflow";
-  version = "6.1.1";
+  version = "6.2.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "taskflow";
     inherit version;
-    hash = "sha256-ygzTK9yhrFUVM720sMNMfCJ3K9Y7i96I8g50ihEuW34=";
+    hash = "sha256-CnWERE2m6AhYLWfnDzvRZqdmoX8aoBB5bgxWtN9zX3w=";
   };
 
   build-system = [
@@ -76,7 +75,6 @@ buildPythonPackage rec {
     sqlalchemy-utils
     stestr
     testscenarios
-    yahoo-zake
   ];
 
   checkPhase = ''

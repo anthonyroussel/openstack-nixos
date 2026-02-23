@@ -8,7 +8,6 @@
   setuptools,
 
   # dependencies
-  os-win,
   oslo-concurrency,
   oslo-config,
   oslo-context,
@@ -31,13 +30,13 @@
 
 buildPythonPackage rec {
   pname = "os-brick";
-  version = "6.14.0";
+  version = "7.0.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "os_brick";
     inherit version;
-    hash = "sha256-U2GOdRJMx0ITF4beGwTit+SI1np290FxmFMSsXH8aUQ=";
+    hash = "sha256-OijcBcQY+ZLnJTiIYTYQfGe4AFGlhAFEzX9z1QuewFo=";
   };
 
   build-system = [
@@ -46,7 +45,6 @@ buildPythonPackage rec {
   ];
 
   dependencies = [
-    os-win
     oslo-concurrency
     oslo-config
     oslo-context

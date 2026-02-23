@@ -13,6 +13,7 @@
   oslo-concurrency,
   oslo-context,
   oslo-i18n,
+  oslo-service,
   oslo-utils,
   requests,
   suds-community,
@@ -27,13 +28,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-vmware";
-  version = "4.8.0";
+  version = "4.9.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_vmware";
     inherit version;
-    hash = "sha256-PbnJaRisbDd1taZWutCgMRgQ3Myc5yCyIB7hLceaw2g=";
+    hash = "sha256-WATH7TsEyS3iXXkzptAYjprmu4LyPFbXrKnqlLgnwWs=";
   };
 
   build-system = [
@@ -47,6 +48,7 @@ buildPythonPackage rec {
     oslo-concurrency
     oslo-context
     oslo-i18n
+    oslo-service
     oslo-utils
     requests
     suds-community

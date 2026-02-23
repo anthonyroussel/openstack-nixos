@@ -12,23 +12,22 @@
   debtcollector,
 
   # checks
-  oslotest,
   stestr,
 }:
 
 buildPythonPackage rec {
   pname = "oslo-rootwrap";
-  version = "7.8.0";
+  version = "7.9.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_rootwrap";
     inherit version;
-    hash = "sha256-lVqlnV2+uk18LMragBOSmKO3UOwBgFyxnIakHJWfjtk=";
+    hash = "sha256-a49loUT4LEyc8KTc1xvHhtduUL9R48TNeNpotHUBnfA=";
   };
 
   postPatch = ''
-    for file in oslo_rootwrap/tests/test_rootwrap.py oslo_rootwrap/filters.py oslo_rootwrap/tests/test_functional.py; do
+    for file in oslo_rootwrap/tests/test_rootwrap.py oslo_rootwrap/filters.py oslo_rootwrap/tests/functional_base.py; do
       substituteInPlace $file \
         --replace "/bin/cat" "${coreutils}/bin/cat" \
         --replace "/bin/echo" "${coreutils}/bin/echo" \

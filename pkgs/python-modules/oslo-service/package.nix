@@ -32,13 +32,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-service";
-  version = "4.5.0";
+  version = "4.5.1";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_service";
     inherit version;
-    hash = "sha256-qR9qNtQaOBgl/LFDlvEwVcukF0gonSMdSYk3lQDigOs=";
+    hash = "sha256-lZsMCIqmxKrqUuGaRYPUn5BaUF6DEg8vCMmzUf/pokQ=";
   };
 
   build-system = [

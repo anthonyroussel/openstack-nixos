@@ -9,6 +9,7 @@
 
   # dependencies
   eventlet,
+  futurist,
   jsonschema,
   keystoneauth1,
   oslo-concurrency,
@@ -38,13 +39,13 @@
 
 buildPythonPackage rec {
   pname = "glance-store";
-  version = "5.3.0";
+  version = "5.4.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "glance_store";
     inherit version;
-    hash = "sha256-vJaoIa/mP3cjL7Tnr9dxH5KCtBxEN35pCrMvMTHwrH8=";
+    hash = "sha256-VQH+XgpelZ0W5M3X8aqC4rtcxjsnVf4xni66vecEc8I=";
   };
 
   build-system = [
@@ -54,6 +55,7 @@ buildPythonPackage rec {
 
   dependencies = [
     eventlet
+    futurist
     jsonschema
     keystoneauth1
     oslo-concurrency
@@ -66,17 +68,6 @@ buildPythonPackage rec {
     retrying
   ];
 
-  nativeCheckInputs = [
-    ddt
-    oslotest
-    requests-mock
-    stestr
-  ]
-  ++ optional-dependencies.cinder
-  ++ optional-dependencies.s3
-  ++ optional-dependencies.swift
-  ++ optional-dependencies.vmware;
-
   optional-dependencies = {
     cinder = [
       os-brick
@@ -88,6 +79,17 @@ buildPythonPackage rec {
     swift = [ python-swiftclient ];
     vmware = [ oslo-vmware ];
   };
+
+  nativeCheckInputs = [
+    ddt
+    oslotest
+    requests-mock
+    stestr
+  ]
+  ++ optional-dependencies.cinder
+  ++ optional-dependencies.s3
+  ++ optional-dependencies.swift
+  ++ optional-dependencies.vmware;
 
   checkPhase = ''
     runHook preCheck

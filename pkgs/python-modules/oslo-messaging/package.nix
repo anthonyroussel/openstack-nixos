@@ -30,13 +30,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-messaging";
-  version = "17.2.0";
+  version = "17.3.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_messaging";
     inherit version;
-    hash = "sha256-ZrTxrn2sx5amuySdqG/GWFj9z9c79GzykFeYVOAvCNo=";
+    hash = "sha256-c4GgjzEJHyi4LLk8CgTtW7KkSH2rG4c9H+atZVOUh3c=";
   };
 
   build-system = [

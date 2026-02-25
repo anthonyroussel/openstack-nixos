@@ -28,13 +28,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-cache";
-  version = "4.1.0";
+  version = "4.1.1";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_cache";
     inherit version;
-    hash = "sha256-WJb9S1aEbvMe9q5Qtm8zvf23rehtQuYiTwtMqDn7Ls0=";
+    hash = "sha256-HBmmBf48f3x2CIQ/KMa1KceCzDWX+Gfq0UdJ9Dm0+Tk=";
   };
 
   build-system = [

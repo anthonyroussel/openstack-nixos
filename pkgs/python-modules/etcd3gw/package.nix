@@ -13,8 +13,7 @@
 
   # tests
   oslotest,
-  pytestCheckHook,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -40,8 +39,7 @@ buildPythonPackage rec {
 
   nativeCheckInputs = [
     oslotest
-    stestr
-    pytestCheckHook
+    stestrCheckHook
   ];
 
   pythonImportsCheck = [ "etcd3gw" ];

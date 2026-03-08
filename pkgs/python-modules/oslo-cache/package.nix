@@ -23,7 +23,7 @@
 
   # checks
   oslotest,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -69,16 +69,10 @@ buildPythonPackage rec {
 
   nativeCheckInputs = [
     oslotest
-    stestr
+    stestrCheckHook
   ]
   ++ optional-dependencies.mongo
   ++ optional-dependencies.dogpile;
-
-  checkPhase = ''
-    runHook preCheck
-    stestr run
-    runHook postCheck
-  '';
 
   pythonImportsCheck = [ "oslo_cache" ];
 

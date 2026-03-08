@@ -29,7 +29,7 @@
   redis,
   sqlalchemy-utils,
   sqlalchemy,
-  stestr,
+  stestrCheckHook,
   testscenarios,
 }:
 
@@ -73,15 +73,9 @@ buildPythonPackage rec {
     redis
     sqlalchemy
     sqlalchemy-utils
-    stestr
+    stestrCheckHook
     testscenarios
   ];
-
-  checkPhase = ''
-    runHook preCheck
-    stestr run
-    runHook postCheck
-  '';
 
   pythonImportsCheck = [ "taskflow" ];
 

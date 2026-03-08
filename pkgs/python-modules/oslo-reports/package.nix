@@ -18,7 +18,7 @@
   # checks
   greenlet,
   oslotest,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -49,14 +49,8 @@ buildPythonPackage rec {
   nativeCheckInputs = [
     greenlet
     oslotest
-    stestr
+    stestrCheckHook
   ];
-
-  checkPhase = ''
-    runHook preCheck
-    stestr run
-    runHook postCheck
-  '';
 
   pythonImportsCheck = [ "oslo_reports" ];
 

@@ -12,7 +12,7 @@
   debtcollector,
 
   # checks
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -45,23 +45,19 @@ buildPythonPackage rec {
     pbr
   ];
 
-  nativeCheckInputs = [ stestr ];
+  nativeCheckInputs = [ stestrCheckHook ];
 
-  checkPhase = ''
-    runHook preCheck
-    stestr run -e <(echo "
-      # Requires networking
-      oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_ChainingRegExpFilter_match
-      oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_ChainingRegExpFilter_multiple
-      oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_exec_dirs_search
-      oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_KillFilter
-      oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_match_filter_recurses_exec_command_filter_matches
-      oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_RegExpFilter_match
-      # Faulty test
-      oslo_rootwrap.tests.test_functional.RootwrapDaemonTest.test_run_with_later_install_cmd
-    ")
-    runHook postCheck
-  '';
+  disabledTests = [
+    # Requires networking
+    "oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_ChainingRegExpFilter_match"
+    "oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_ChainingRegExpFilter_multiple"
+    "oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_exec_dirs_search"
+    "oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_KillFilter"
+    "oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_match_filter_recurses_exec_command_filter_matches"
+    "oslo_rootwrap.tests.test_rootwrap.RootwrapTestCase.test_RegExpFilter_match"
+    # Faulty test
+    "oslo_rootwrap.tests.test_functional.RootwrapDaemonTest.test_run_with_later_install_cmd"
+  ];
 
   pythonImportsCheck = [ "oslo_rootwrap" ];
 

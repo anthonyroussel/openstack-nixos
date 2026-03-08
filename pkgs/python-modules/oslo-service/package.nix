@@ -27,7 +27,7 @@
   futurist,
   oslotest,
   procps,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -68,17 +68,13 @@ buildPythonPackage rec {
     futurist
     oslotest
     procps # required to run ps
-    stestr
+    stestrCheckHook
   ];
 
-  # Disable tests that requires networking
-  checkPhase = ''
-    runHook preCheck
-    stestr run -e <(echo "
-      oslo_service.tests.test_wsgi.TestWSGIServerWithSSL.test_app_using_ipv6_and_ssl
-    ")
-    runHook postCheck
-  '';
+  disabledTests = [
+    # Disable tests that requires networking
+    "oslo_service.tests.test_wsgi.TestWSGIServerWithSSL.test_app_using_ipv6_and_ssl"
+  ];
 
   pythonImportsCheck = [ "oslo_service" ];
 

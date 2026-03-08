@@ -25,7 +25,7 @@
   # checks
   castellan,
   ddt,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -63,15 +63,13 @@ buildPythonPackage rec {
   nativeCheckInputs = [
     castellan
     ddt
-    stestr
+    stestrCheckHook
   ];
 
-  # Disable tests requiring networking.
-  checkPhase = ''
-    runHook preCheck
-    stestr run -e <(echo "test_get_ips")
-    runHook postCheck
-  '';
+  disabledTests = [
+    # Requires networking
+    "test_get_ips"
+  ];
 
   pythonImportsCheck = [ "os_brick" ];
 

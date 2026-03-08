@@ -9,10 +9,10 @@
   jinja2,
   pbr,
   psutil,
-  pytestCheckHook,
   requests,
   setuptools-scm,
   setuptools,
+  stestrCheckHook,
   testtools,
   xattr,
 }:
@@ -44,8 +44,8 @@ buildPythonPackage rec {
 
   nativeCheckInputs = [
     addBinToPathHook
-    pytestCheckHook
     requests
+    stestrCheckHook
     testtools
   ];
 

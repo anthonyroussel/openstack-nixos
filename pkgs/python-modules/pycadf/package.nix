@@ -13,7 +13,7 @@
 
   # checks
   fixtures,
-  pytestCheckHook,
+  stestrCheckHook,
   testtools,
 }:
 
@@ -44,7 +44,7 @@ buildPythonPackage rec {
 
   nativeCheckInputs = [
     fixtures
-    pytestCheckHook
+    stestrCheckHook
     testtools
   ];
 

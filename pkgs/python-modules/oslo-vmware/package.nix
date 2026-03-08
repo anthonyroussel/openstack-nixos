@@ -23,7 +23,7 @@
   ddt,
   hacking,
   oslotest,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -59,14 +59,8 @@ buildPythonPackage rec {
     ddt
     hacking
     oslotest
-    stestr
+    stestrCheckHook
   ];
-
-  checkPhase = ''
-    runHook preCheck
-    stestr run
-    runHook postCheck
-  '';
 
   pythonImportsCheck = [ "oslo_vmware" ];
 

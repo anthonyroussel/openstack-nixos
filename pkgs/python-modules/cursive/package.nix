@@ -18,7 +18,7 @@
   # checks
   mock,
   oslotest,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -48,14 +48,8 @@ buildPythonPackage rec {
   nativeCheckInputs = [
     mock
     oslotest
-    stestr
+    stestrCheckHook
   ];
-
-  checkPhase = ''
-    runHook preCheck
-    stestr run
-    runHook postCheck
-  '';
 
   pythonImportsCheck = [ "cursive" ];
 

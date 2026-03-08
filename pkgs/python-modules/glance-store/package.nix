@@ -34,7 +34,7 @@
   ddt,
   oslotest,
   requests-mock,
-  stestr,
+  stestrCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -84,21 +84,17 @@ buildPythonPackage rec {
     ddt
     oslotest
     requests-mock
-    stestr
+    stestrCheckHook
   ]
   ++ optional-dependencies.cinder
   ++ optional-dependencies.s3
   ++ optional-dependencies.swift
   ++ optional-dependencies.vmware;
 
-  checkPhase = ''
-    runHook preCheck
-    stestr run -e <(echo "
-      glance_store.tests.unit.test_filesystem_store.TestStore.test_add_check_metadata_list_with_valid_mountpoint_locations
-      glance_store.tests.unit.test_multistore_filesystem.TestMultiStore.test_add_check_metadata_list_with_valid_mountpoint_locations
-    ")
-    runHook postCheck
-  '';
+  disabledTests = [
+    "glance_store.tests.unit.test_filesystem_store.TestStore.test_add_check_metadata_list_with_valid_mountpoint_locations"
+    "glance_store.tests.unit.test_multistore_filesystem.TestMultiStore.test_add_check_metadata_list_with_valid_mountpoint_locations"
+  ];
 
   pythonImportsCheck = [ "glance_store" ];
 

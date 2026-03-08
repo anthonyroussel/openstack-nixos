@@ -24,7 +24,7 @@
   confluent-kafka,
   oslotest,
   pifpaf,
-  stestr,
+  stestrCheckHook,
   testscenarios,
 }:
 
@@ -63,15 +63,9 @@ buildPythonPackage rec {
     confluent-kafka
     oslotest
     pifpaf
-    stestr
+    stestrCheckHook
     testscenarios
   ];
-
-  checkPhase = ''
-    runHook preCheck
-    stestr run
-    runHook postCheck
-  '';
 
   pythonImportsCheck = [ "oslo_messaging" ];
 

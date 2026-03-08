@@ -13,7 +13,7 @@
   # checks
   eventlet,
   oslotest,
-  stestr,
+  stestrCheckHook,
   testscenarios,
 }:
 
@@ -40,15 +40,9 @@ buildPythonPackage rec {
   nativeCheckInputs = [
     eventlet
     oslotest
-    stestr
+    stestrCheckHook
     testscenarios
   ];
-
-  checkPhase = ''
-    runHook preCheck
-    stestr run
-    runHook postCheck
-  '';
 
   pythonImportsCheck = [ "futurist" ];
 

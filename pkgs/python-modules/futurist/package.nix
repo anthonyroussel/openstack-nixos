@@ -19,13 +19,13 @@
 
 buildPythonPackage rec {
   pname = "futurist";
-  version = "3.2.1";
+  version = "3.3.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "futurist";
     inherit version;
-    hash = "sha256-Ad1PMKzfuy4utgkdpWXt7YLYy69sSKNsx/c8Ec+n+z8=";
+    hash = "sha256-O4T9zlLrUJS0htlbi5sRF/3wQPNkqWlp+8It+VX0JVg=";
   };
 
   build-system = [

@@ -19,14 +19,14 @@
 
 buildPythonPackage rec {
   pname = "python-binary-memcached";
-  version = "0.31.4";
+  version = "0.32.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "jaysonsantos";
     repo = "python-binary-memcached";
     tag = "v${version}";
-    hash = "sha256-w33VDFv9OX9tj/JarnfkaR9GLe77O4/kXUBrA6gPJHc=";
+    hash = "sha256-l4cwbchGEpKbRdHqF093EcblX5fpPLKC+t1lgZmTMxk=";
   };
 
   build-system = [ setuptools ];

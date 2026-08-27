@@ -36,12 +36,12 @@
 
 buildPythonPackage rec {
   pname = "keystonemiddleware";
-  version = "12.0.0";
+  version = "13.0.1";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-I0/wtdNVQawREzljOeLW4msfeh14Z7yiI/SIBz4gfNQ=";
+    hash = "sha256-D1mWRXEft76ychv6QJ2StptcPuN4j9XR9dsOV/OPRKc=";
   };
 
   build-system = [

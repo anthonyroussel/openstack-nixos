@@ -35,13 +35,13 @@
 
 buildPythonPackage rec {
   pname = "taskflow";
-  version = "6.2.0";
+  version = "6.5.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "taskflow";
     inherit version;
-    hash = "sha256-CnWERE2m6AhYLWfnDzvRZqdmoX8aoBB5bgxWtN9zX3w=";
+    hash = "sha256-BVApBWjwKm3Dqb0Pzt5seVaJPayiq4PMf64XiAIPZD8=";
   };
 
   build-system = [

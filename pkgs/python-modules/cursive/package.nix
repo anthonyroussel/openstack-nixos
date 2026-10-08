@@ -23,12 +23,12 @@
 
 buildPythonPackage rec {
   pname = "cursive";
-  version = "0.2.3";
+  version = "0.3.1";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-9DX2zb5qUX8FTBEFw25DbXhoEk8bIn0xD+gJ2RiowQw=";
+    hash = "sha256-hk9tL/xbPD4LJ6+jUMrxUkpVAjkfsSitziFeRJ+yRKs=";
   };
 
   build-system = [

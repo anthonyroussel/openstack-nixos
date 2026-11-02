@@ -17,13 +17,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-rootwrap";
-  version = "7.9.0";
+  version = "7.10.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_rootwrap";
     inherit version;
-    hash = "sha256-a49loUT4LEyc8KTc1xvHhtduUL9R48TNeNpotHUBnfA=";
+    hash = "sha256-mcJPdjw/HwvpZlLkFqCZtIYRXZcJ3PpzMQ9IFoz4mkQ=";
   };
 
   postPatch = ''

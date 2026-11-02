@@ -17,12 +17,12 @@
 
 buildPythonPackage rec {
   pname = "automaton";
-  version = "3.3.0";
+  version = "3.5.0";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-1zz3um2kPvKt91xJ2tM0/SQRbO6g3U5roecgdAQ5opM=";
+    hash = "sha256-OJbQPTKLUuNBt90Tw+OWPw2kSsiKFgrAfnYaCH3ap+M=";
   };
 
   build-system = [

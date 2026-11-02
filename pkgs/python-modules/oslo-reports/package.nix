@@ -23,13 +23,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-reports";
-  version = "3.7.0";
+  version = "3.9.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_reports";
     inherit version;
-    hash = "sha256-MIUpckWVlGcWhvIyrWfo/mPi8lQuNON6aXMdVCBA40M=";
+    hash = "sha256-ZuBWPVy1r8D6y6CPSJBkk9RKmgSH0Uo7ArEvtg7ZVRM=";
   };
 
   build-system = [

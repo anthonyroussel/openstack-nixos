@@ -19,14 +19,14 @@
 
 buildPythonPackage rec {
   pname = "pycadf";
-  version = "4.0.1";
+  version = "4.1.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "openstack";
     repo = "pycadf";
     tag = version;
-    hash = "sha256-jIpjOADfZmEX8ev3oBN8FiH41The/8X6SC5WetuLRMo=";
+    hash = "sha256-8kU1tm/KvC1lWkHlA49BGoGme2Masbemkc29PDbcwbs=";
   };
 
   # Set version manually since prb reads from git, not tarball

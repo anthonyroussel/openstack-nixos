@@ -30,13 +30,13 @@
 
 buildPythonPackage rec {
   pname = "os-brick";
-  version = "7.0.0";
+  version = "7.1.1";
   pyproject = true;
 
   src = fetchPypi {
     pname = "os_brick";
     inherit version;
-    hash = "sha256-OijcBcQY+ZLnJTiIYTYQfGe4AFGlhAFEzX9z1QuewFo=";
+    hash = "sha256-pQNLn1flZA3BZq5RYM1Z4X83N7N22FuUm6gynDD1Vcg=";
   };
 
   build-system = [

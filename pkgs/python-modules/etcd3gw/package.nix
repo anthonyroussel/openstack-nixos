@@ -18,12 +18,12 @@
 
 buildPythonPackage rec {
   pname = "etcd3gw";
-  version = "2.5.0";
+  version = "2.7.0";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-clXwrhIT00o72xCBgwqyWvubJjJQh14+YeRrpYatrro=";
+    hash = "sha256-VelbeI7E5ypX5wTC7M30QWPvI7y0/OiDxxk24e2K2Pg=";
   };
 
   build-system = [

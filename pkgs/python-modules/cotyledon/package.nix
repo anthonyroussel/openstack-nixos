@@ -9,6 +9,7 @@
 
   # dependencies
   setproctitle,
+  typing-extensions,
 
   # optional-dependencies
   oslo-config,
@@ -42,6 +43,7 @@ buildPythonPackage rec {
 
   dependencies = [
     setproctitle
+    typing-extensions
   ];
 
   optional-dependencies = {

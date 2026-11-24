@@ -39,13 +39,13 @@
 
 buildPythonPackage rec {
   pname = "glance-store";
-  version = "5.4.0";
+  version = "5.8.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "glance_store";
     inherit version;
-    hash = "sha256-VQH+XgpelZ0W5M3X8aqC4rtcxjsnVf4xni66vecEc8I=";
+    hash = "sha256-OaLdOzRYy4L7h+N5rvhtpTz6PmI7uO1F1fbfhDTGmBI=";
   };
 
   build-system = [

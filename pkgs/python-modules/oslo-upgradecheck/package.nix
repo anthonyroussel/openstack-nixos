@@ -21,13 +21,13 @@
 
 buildPythonPackage rec {
   pname = "oslo-upgradecheck";
-  version = "2.7.1";
+  version = "2.9.0";
   pyproject = true;
 
   src = fetchPypi {
     pname = "oslo_upgradecheck";
     inherit version;
-    hash = "sha256-mrLnJtMuR8q0+cQlgOJybjEdgkPz5E8vZ/SHVRfynvQ=";
+    hash = "sha256-rYc/YqpXNeGWroV75bx89YRPHvKbLjvKySiy2tXyKWQ=";
   };
 
   build-system = [
